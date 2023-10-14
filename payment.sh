@@ -18,9 +18,10 @@ cd /app
 
 echo -e "\e[32mInstall Dependencies\e[0m"
 pip3.6 install -r requirements.txt &>>/tmp/roboshop.log
+cd
 
 echo -e "\e[32mCopying payment service file\e[0m"
-cp payment.service /etc/systemd/system/payment.service &>>/tmp/roboshop.log
+cp /root/roboshop-shell/payment.service /etc/systemd/system/payment.service &>>/tmp/roboshop.log
 
 echo -e "\e[32mTell Systemd to load modified content\e[0m"
 systemctl daemon-reload &>>/tmp/roboshop.log

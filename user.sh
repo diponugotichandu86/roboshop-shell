@@ -24,7 +24,7 @@ npm install &>>/tmp/roboshop.log
 
 echo -e "\e[32mCopying catalogue service file to desired location\e[0m"
 cd
-cp user.service /etc/systemd/system/user.service &>>/tmp/roboshop.log
+cp /root/roboshop-shell/user.service /etc/systemd/system/user.service &>>/tmp/roboshop.log
 
 echo -e "\e[32mTell the Systemd to reload the service content and start the service\e[0m"
 systemctl daemon-reload &>>/tmp/roboshop.log
@@ -32,7 +32,7 @@ systemctl enable user &>>/tmp/roboshop.log
 systemctl restart user &>>/tmp/roboshop.log
 
 echo -e "\e[32mCopying mongodb repo file\e[0m"
-cp mongo.repo /etc/yum.repos.d/mongo.repo &>>/tmp/roboshop.log
+cp /root/roboshop-shell/mongo.repo /etc/yum.repos.d/mongo.repo &>>/tmp/roboshop.log
 
 echo -e "\e[32mInstalling mongodb-client\e[0m"
 yum install mongodb-org-shell -y &>>/tmp/roboshop.log

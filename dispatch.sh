@@ -14,13 +14,15 @@ echo -e "\e[32mExtract the Application Code\e[0m"
 unzip /tmp/dispatch.zip &>>/tmp/roboshop.log
 cd /app
 
+
 echo -e "\e[32mInstall Dependencies\e[0m"
 go mod init dispatch &>>/tmp/roboshop.log
 go get &>>/tmp/roboshop.log
 go build &>>/tmp/roboshop.log
+cd
 
 echo -e "\e[32mCopying dispatch service file\e[0m"
-cp dispatch.service /etc/systemd/system/dispatch.service &>>/tmp/roboshop.log
+cp /root/roboshop-shell/dispatch.service /etc/systemd/system/dispatch.service &>>/tmp/roboshop.log
 
 echo -e "\e[32mTell Systemd to load service content\e[0m"
 systemctl daemon-reload &>>/tmp/roboshop.log

@@ -19,9 +19,10 @@ cd /app
 echo -e "\e[32mDownload the dependencies & build the application\e[0m"
 mvn clean package &>>/tmp/roboshop.log
 mv target/shipping-1.0.jar shipping.jar
+cd
 
 echo -e "\e[32mCopying Shipping Service file\e[0m"
-cp shipping.service /etc/systemd/system/shipping.service &>>/tmp/roboshop.log
+cp /root/roboshop-shell/shipping.service /etc/systemd/system/shipping.service &>>/tmp/roboshop.log
 
 echo -e "\e[32mTell the Systemd to reload the service\e[0m"
 systemctl daemon-reload &>>/tmp/roboshop.log

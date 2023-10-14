@@ -5,7 +5,7 @@ echo -e "\e[32mConfigure YUM Repos for RabbitMQ\e[0m"
 curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh | bash &>>/tmp/roboshop.log
 
 echo -e "\e[32mInstall RabbitMQ\e[0m"
-dnf install rabbitmq-server -y &>>/tmp/roboshop.log
+yum install rabbitmq-server -y &>>/tmp/roboshop.log
 
 echo -e "\e[32mStart RabbitMQ Service\e[0m"
 systemctl enable rabbitmq-server &>>/tmp/roboshop.log
