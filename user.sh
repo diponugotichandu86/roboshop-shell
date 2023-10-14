@@ -23,7 +23,6 @@ echo -e "\e[32mInstall NodeJS Dependencies\e[0m"
 npm install &>>/tmp/roboshop.log
 
 echo -e "\e[32mCopying catalogue service file to desired location\e[0m"
-cd
 cp /root/roboshop-shell/user.service /etc/systemd/system/user.service &>>/tmp/roboshop.log
 
 echo -e "\e[32mTell the Systemd to reload the service content and start the service\e[0m"
