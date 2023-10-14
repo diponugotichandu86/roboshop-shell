@@ -11,6 +11,8 @@ echo -e "\e[32mExtracting FrontEnd Content\e[0m"
 cd /usr/share/nginx/html
 unzip /tmp/frontend.zip &>>/tmp/roboshop.log
 
+# create reverse proxy config
+
 echo -e "\e[32mRestarting Nginx Service\e[0m"
 systemctl enable nginx &>>/tmp/roboshop.log
 systemctl restart nginx &>>/tmp/roboshop.log
